@@ -2,12 +2,19 @@ const express = require("express");
 
 const app = express();
 
+// configure view engine
+app.set("view engine", ejs);
+
 app.listen(3000);
 
 app.get("/", (req, res) => {
-  res.send("<p>Home page</p>");
+  res.render("index");
 });
 
 app.get("/about", (req, res) => {
-     res.send("<p>About page</p>");
-   });
+  res.render("about");
+});
+
+app.use((req, res) => {
+  res.status(400).render("404");
+});
