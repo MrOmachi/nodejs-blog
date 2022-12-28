@@ -29,7 +29,7 @@ app.get("/about", (req, res) => {
   res.render("about", { title: "about" });
 });
 
-app.get("/blog/create", (req, res) => {
+app.get("/blogs/create", (req, res) => {
   res.render("create", { title: "create a new blog" });
 });
 
